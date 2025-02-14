@@ -168,6 +168,10 @@ func (me *AndroidNotificationServer) SendNotification(msg *PushNotification) Pus
 		Android: &messaging.AndroidConfig{
 			Priority: "high",
 		},
+		Notification: &messaging.Notification{
+			Title: data["sender_name"],
+			Body:  data["message"],
+		},
 	}
 
 	me.logger.Info(
